@@ -1,0 +1,85 @@
+.lp-path-editor {
+  --lp-path-accent: #4f46e5;
+  --lp-path-surface: #fff;
+  --lp-path-text: #172033;
+  --lp-path-stroke: #172033;
+  display: grid;
+  gap: 0.75rem;
+  max-width: 56rem;
+  padding: 1rem;
+  border: 1px solid #aeb8c7;
+  border-radius: 0.5rem;
+  background: var(--lp-path-surface);
+  color: var(--lp-path-text);
+  font:
+    1rem/1.5 system-ui,
+    sans-serif;
+}
+.lp-path-editor p {
+  margin: 0;
+}
+.lp-path-editor__canvas {
+  display: block;
+  max-width: 100%;
+  background: #f8fafc;
+  border: 1px solid #aeb8c7;
+  touch-action: none;
+}
+.lp-path-editor__path {
+  fill: none;
+  stroke: var(--lp-path-stroke);
+  stroke-width: 2;
+  pointer-events: none;
+  vector-effect: non-scaling-stroke;
+}
+.lp-path-editor__guide {
+  stroke: #718096;
+  stroke-dasharray: 4 3;
+  pointer-events: none;
+}
+.lp-path-editor__anchor {
+  fill: var(--lp-path-surface);
+  stroke: var(--lp-path-accent);
+  stroke-width: 2;
+  cursor: grab;
+}
+.lp-path-editor__anchor[aria-pressed='true'] {
+  fill: var(--lp-path-accent);
+}
+.lp-path-editor__handle {
+  fill: #f59e0b;
+  stroke: #172033;
+  cursor: grab;
+}
+.lp-path-editor__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 0.5rem;
+}
+.lp-path-editor label {
+  display: grid;
+  gap: 0.25rem;
+}
+.lp-path-editor input,
+.lp-path-editor select,
+.lp-path-editor button,
+.lp-path-editor textarea {
+  font: inherit;
+  max-width: 100%;
+  min-width: 0;
+}
+.lp-path-editor button {
+  min-height: 2.75rem;
+  cursor: pointer;
+}
+.lp-path-editor :focus-visible {
+  outline: 3px solid var(--lp-path-accent);
+  outline-offset: 3px;
+}
+.lp-path-editor circle:focus-visible {
+  stroke-width: 4;
+}
+.lp-path-editor [aria-disabled='true'] {
+  cursor: not-allowed;
+}
